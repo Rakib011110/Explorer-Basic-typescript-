@@ -1,1 +1,389 @@
-# Explorer-Basic-typescript-aaaaaaaa
+# Typscript-Using-Method-And-Examples  
+
+This repository will help every js and ts frontend-backend developer and beginners are very helpful. This repository is coming with beginners in mind.
+
+<details>
+<summary>
+  বাংলায় পড়ুন
+</summary>
+<br >
+  
+- এই repository  প্রত্যেক JS AND TS ফ্রন্টএন্ড-ব্যাকএন্ড Developer দের কিছুটা সহযোগিতা করতে পারে । 
+
+</details>  
+
+------------------------
+
+
+--------------------
+<details>
+<summary>
+what is typeScript
+</summary>
+<br >
+
+
+TypeScript is a programming language that's very similar to JavaScript. It's like a "superset" of JavaScript, which means it adds some extra features on top of JavaScript. These features help developers catch errors early on and make it easier to work with large and complex codebases. In simple words, TypeScript helps you write JavaScript code with fewer mistakes and more structure.
+
+</details> 
+--------------------
+<details>
+<summary>
+ Why we will be use ts 
+
+
+</summary>
+<br >
+
+
+English: TypeScript helps catch errors early, improves code quality, and enhances developer productivity.
+
+বাংলা: TypeScript সহযোগিতা করে ত্রুটি সমূহকে প্রাথমিকভাবে ধরা পরে, কোডের গুণমান উন্নত করে, এবং ডেভেলপারের কর্মক্ষমতা বাড়ায়।
+
+</details> 
+--------------------
+<details>
+<summary>
+What is benefit of typescript 
+
+
+</summary>
+<br >
+
+English: The benefits of TypeScript include catching errors early, improving code quality, and enhancing developer productivity.
+
+বাংলা: TypeScript এর সুবিধাগুলির মধ্যে ত্রুটি সমূহকে প্রাথমিকভাবে ধরা পাওয়া, কোডের গুণমান উন্নত করা, এবং ডেভেলপারের কর্মক্ষমতা বাড়ানো রয়েছে।  
+
+ JS type in Ts 
+- number. string. boolean. null. undefined. Object. symbol 
+
+TS Own types 
+- interface. void. array. Enum. union. inersaction
+
+</details> 
+--------------------
+<details>
+<summary>
+how to install ts 
+
+
+</summary>
+<br >
+
+1. First, make sure you have Node.js installed on your computer. You can download and install it from the official Node.js website: https://nodejs.org/
+
+2.  open your command prompt or terminal.
+
+3. To install TypeScript globally, 
+```
+npm install -g typescript
+```
+
+4. TypeScript should be installed on your system.
+
+5. To verify that TypeScript is installed, you can check the version by running:
+```
+tsc --version
+```
+
+6. If TypeScript is installed correctly, you should see the version number displayed in the terminal.
+
+
+</details> 
+--------------------
+<details>
+<summary>
+Run Ts code
+</summary>
+<br >
+
+
+
+1. Write your TypeScript code in a file with a `.ts` extension. For example, you can create a file named `example.ts`.
+
+2. Open your command prompt or terminal and navigate to the directory where your TypeScript file is located.
+
+3. Compile your TypeScript code into JavaScript using the TypeScript compiler (`tsc`). Run the following command:
+```
+tsc example.ts
+```
+This command will generate a JavaScript file (`example.js`) in the same directory.
+
+4. Once the TypeScript code is compiled, you can run the generated JavaScript file using Node.js. Run the following command:
+```
+node example.js
+```
+
+
+</details> 
+--------------------
+<details>
+<summary>
+Config ts file
+</summary>
+<br >
+
+
+
+1. **Initialize TypeScript Configuration**: In your project directory, open a terminal or command prompt.
+
+2. **Create a `tsconfig.json` file**: Run the following command:
+   ```
+   tsc --init
+   ```
+   This command generates a `tsconfig.json` file with default settings.
+
+3. **Configure `tsconfig.json`**: Open the generated `tsconfig.json` file in a text editor. Here you can configure various TypeScript compiler options according to your project's needs. Some common options include:
+   - `"target"`: Specifies the version of ECMAScript to compile to (e.g., `"ES5"`, `"ES6"`).
+   - `"outDir"`: Specifies the output directory for compiled JavaScript files.
+   - `"rootDir"`: Specifies the root directory of TypeScript source files.
+   - `"include"`: Specifies the files to include in compilation.
+   - `"exclude"`: Specifies the files to exclude from compilation.
+
+4. **Write TypeScript Code**: Create `.ts` files in your project directory and write your TypeScript code in them.
+
+5. **Compile TypeScript Code**: Run the TypeScript compiler (`tsc`) in the terminal to compile your TypeScript files. If you have configured `tsconfig.json`, you can simply run:
+   ```
+   tsc
+   ```
+   This command will compile all TypeScript files in the project according to the configuration specified in `tsconfig.json`.
+
+6. **Run the Compiled JavaScript Code**: After compiling, you can run the generated JavaScript files using Node.js:
+   ```
+   node path/to/compiled/file.js
+   ```
+
+
+</details> 
+-------------
+----------------
+
+
+<details>
+<summary>
+What is primitive and none primitive data type
+</summary>
+<br >
+list of primitive data types in TypeScript:
+
+1. `number`: Represents numeric values like integers or floating-point numbers.
+2. `string`: Represents text or string values.
+3. `boolean`: Represents true or false values.
+4. `null`: Represents an intentional absence of any value.
+5. `undefined`: Represents a variable that has been declared but not assigned a value.
+6. `symbol`: Represents unique and immutable values, often used as object keys.
+
+none primitive data types 
+- array 
+- tuple
+- object
+
+
+```js 
+// Basic ts
+
+// 1- string
+let Myname: string = "Rakib";
+
+// 2- number
+let number: number = 123;
+
+// 3-Boolean
+let isAdmin: boolean = true;
+
+// 4- null
+let y: null = null;
+
+// 5-undefined
+let x: undefined = undefined;
+
+// Array
+let freind: string[] = ["rakib", "sadiya"];
+
+let eligibleRollLIst: number[] = [34, 435, 434];
+eligibleRollLIst.push(43);
+
+//  tuple --> array --> order--> type of value
+
+let coordinates: [number, number] = [3423, 434];
+
+let ageName: [number, string] = [22, "rakib"];
+
+```
+
+
+
+</details> 
+
+
+--------------------
+<details>
+<summary>
+What is Object in ts
+
+
+</summary>
+<br >
+
+
+In TypeScript, an object is like a container that holds related information. It's made up of key-value pairs. For example:
+```typescript
+let person = {
+    name: "John",
+    age: 30,
+    isStudent: false
+};
+```
+Here, `person` is an object with properties like `name`, `age`, and `isStudent`, each storing different kinds of information about John. 
+
+```js
+const user: {
+  company: "Ph Hero"; // type- literal types
+  fristName: string;
+  middleName?: string;
+  lastName: string;
+  isMarried: boolean;
+} = {
+  company: "Ph Hero",
+  fristName: "Rakibul",
+  lastName: "Islam",
+  isMarried: true,
+};
+
+```
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is Function in ts
+
+
+</summary>
+<br >
+// learning Function
+
+//  normal function
+//  arrow Function
+
+function add(num1: number, num2: number) {
+  return num1 + num2;
+}
+
+// arrow function
+const addArrow = (num1: number, numb2: number): number => num1 + numb2;
+
+//  object --> function --> method
+
+const poorUser = {
+  name: "rakib",
+  balance: 0,
+  addBalance(balance: number): string {
+    return `My new Balance is ${this.balance + balance}`;
+  },
+};
+
+
+
+English:
+1. **Arrow Function**: `addArrow` is a function that takes two numbers as input and returns their sum. It's written using arrow function syntax `(parameters) => expression`.
+
+2. **Object - Function - Method**: `poorUser` is an object representing a user with properties like `name` and `balance`. Inside this object, there's a function `addBalance` that takes a number as input and returns a string indicating the new balance after adding the input amount to the current balance. It's called a method because it's a function inside an object.
+
+Bangla:
+1. **অ্যারো ফাংশন**: `addArrow` হলো একটি ফাংশন যেখানে দুটি সংখ্যা নেয় এবং তাদের যোগফল ফেরত দেয়। এটি অ্যারো ফাংশন সিনট্যাক্স `(প্যারামিটার) => এক্সপ্রেশন` ব্যবহার করে লেখা হয়েছে।
+
+2. **অবজেক্ট - ফাংশন - মেথড**: `poorUser` হলো একটি অবজেক্ট যেখানে `নাম` এবং `ব্যালেন্স` এর মত গুলো প্রোপার্টি আছে। এই অবজেক্টের ভিতরে, `addBalance` হলো একটি ফাংশন যা একটি সংখ্যা নেয় এবং তার বর্তমান ব্যালেন্সে যোগ করার পরিণামের নতুন ব্যালেন্স নির্দেশ করে। এটিকে একটি মেথড বলা হয় কারণ এটি অবজেক্টের ভিতরে একটি ফাংশন।
+
+
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+
+</details> 
+
+--------------------
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+
+</details> 
