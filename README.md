@@ -303,34 +303,160 @@ Bangla:
 --------------------
 <details>
 <summary>
-What is
+What is Spread, Rest Operator and Destructuring,
 
 
 </summary>
 <br >
+
+1. **Spread Operator (`...`)**:
+   - English: The spread operator `...` allows you to expand elements of an iterable (like an array or object) into places where multiple elements are expected.
+   - Bangla: স্প্রেড অপারেটর `...` আপনাকে ইটারেবলের (যেমন একটি অ্যারে বা অবজেক্ট) উপাদানগুলি নতুন উপাদানে বিস্তার করতে অনুমতি দেয়।
+
+2. **Rest Operator (`...`)**:
+   - English: The rest operator `...` gathers the remaining parameters into an array, representing an indefinite number of arguments.
+   - Bangla: রেস্ট অপারেটর `...` অবশিষ্ট প্যারামিটারগুলি একটি অ্যারেতে সংগ্রহ করে, অসীম সংখ্যক আর্গুমেন্ট প্রতিনিধিত্ব করে।
+
+3. **Destructuring**:
+   - English: Destructuring allows you to extract values from arrays or objects and assign them to variables in a concise way.
+   - Bangla: ডিস্ট্রাকচারিং আপনাকে অ্যারে বা অবজেক্ট থেকে মান উত্তোলন করে এবং তাদেরকে সংক্ষিপ্ত উপায়ে ভেরিয়েবলগুলিতে বর্তমান করতে দেয়। 
+
+```js 
+{
+  //  spread operator
+  //    rest operator
+  //  distructure
+
+  const bro1: string[] = ["hasib", "faruk"];
+  const bro2: string[] = ["roton", "ratul"];
+  bro1.push(...bro2);
+
+  const mentors1 = {
+    ts: "misba",
+    redux: "mir",
+  };
+  const mentors2 = {
+    prisma: "mizan",
+    nextjs: "tonnmoy",
+  };
+
+  const mentorLIst = {
+    ...mentors1,
+    ...mentors2,
+  };
+
+  const greetFriends = (...friends: string[]) => {
+    friends.forEach((friend: string) => console.log(freind));
+  };
+
+  greetFriends("abul", "kabul", "ubul", "babul");
+
+  // 
+}
+
+//  distructuring
+{
+  const user = {
+    id: 111,
+    name: {
+      fristName: "sadiya",
+      middleName: "islam",
+      lastName: "sinthiya",
+    },
+    conctactNo: "01754836031",
+    address: "pabna",
+  };
+
+  const {
+    conctactNo,
+    name: { fristName },
+  } = user;
+}
+
+//  array distructuring
+
+const myFriends = ["chanler", "joey", "ross"];
+
+const [, , besfreind, ...rest] = myFriends;
+
+
+```
 
 </details> 
 
 --------------------
 <details>
 <summary>
-What is
+What is Type alias
 
 
 </summary>
 <br >
+Type alias is a feature in TypeScript that allows you to create a new name for a type. It's useful for giving descriptive names to complex types or for creating shorter names for types that are used frequently. With type alias, you can create custom types based on existing types or combine multiple types into one. It helps make your code more readable and maintainable by providing meaningful names for types.
+
+```js 
+{
+  // type alias
+
+  type Student = {
+    name: string;
+    age: number;
+    gender: string;
+    contactNo?: string;
+  };
+
+  const student1: Student = {
+    name: "rakib",
+    age: 22,
+    gender: "male",
+    contactNo: "0173333333",
+  };
+  const student2: Student = {
+    name: "mir",
+    age: 24,
+    gender: "male",
+    contactNo: "0176666666",
+  };
+  const student3: Student = {
+    name: "mir",
+    age: 24,
+    gender: "male",
+    contactNo: "0176666666",
+  };
+  type UserName = string;
+  type IsAddmin = boolean;
+
+  const userName: UserName = "rakib";
+  const isAdmin: IsAddmin = true;
+
+  type Add = (num1: number, num2: number) => number;
+  const add: Add = (num1, num2) => num1 + num2;
+}
+```
 
 </details> 
 
 --------------------
 <details>
 <summary>
-What is
+What is Ternary, Optional Chaining & Nullish Coalescing Operator
 
 
 </summary>
 <br >
 
+
+1. **Ternary Operator**:
+   - English: The ternary operator `condition ? expr1 : expr2` is a shorthand way of writing an if-else statement. It evaluates the `condition`, and if it's true, it returns `expr1`, otherwise it returns `expr2`.
+   - Bangla: টার্নারি অপারেটর `condition ? expr1 : expr2` হলো একটি ছোট প্রকারের ইফ-এলস স্টেটমেন্ট লেখার উপায়। এটি `condition` এর মান এবং যদি সত্য হয়, তবে এটি `expr1` কে ফেরত দেয়, অন্যথায় এটি `expr2` কে ফেরত দেয়।
+
+2. **Optional Chaining Operator**:
+   - English: The optional chaining operator `?.` is used to access properties of an object without having to check if each property exists. It returns `undefined` if a property in the chain is null or undefined.
+   - Bangla: অপশনাল চেইনিং অপারেটর `?.` ব্যবহার করা হয় অবজেক্টের প্রপার্টি অ্যাক্সেস করতে যেখানে প্রত্যেক প্রপার্টি বিদ্যমান কি না তা চেক করার প্রয়োজন না করে। যদি চেইনের কোনো প্রপার্টি null অথবা undefined হয়, তবে এটি `undefined` ফেরত দেয়।
+
+3. **Nullish Coalescing Operator**:
+   - English: The nullish coalescing operator `??` is used to provide a default value when a variable is null or undefined. It returns the right-hand operand if the left-hand operand is `null` or `undefined`, otherwise it returns the left-hand operand.
+   - Bangla: নালিশ কো-অ্যালিসিং অপারেটর `??` ব্যবহার করা হয় যখন একটি ভ্যারিয়েবল null অথবা undefined হলে একটি ডিফল্ট মান সরবরাহ করতে। যদি বাম অপারেন্ড null বা undefined হয়, তবে এটি ডান অপারেন্ড ফেরত দেয়, অন্যথায় এটি বাম অপারেন্ড ফেরত দেয়।
 </details> 
 
 --------------------
