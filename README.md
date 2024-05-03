@@ -12,10 +12,10 @@ This repository will help every js and ts frontend-backend developer and beginne
 
 </details>  
 
-------------------------
 
 
---------------------
+
+
 <details>
 <summary>
 what is typeScript
@@ -26,7 +26,7 @@ what is typeScript
 TypeScript is a programming language that's very similar to JavaScript. It's like a "superset" of JavaScript, which means it adds some extra features on top of JavaScript. These features help developers catch errors early on and make it easier to work with large and complex codebases. In simple words, TypeScript helps you write JavaScript code with fewer mistakes and more structure.
 
 </details> 
---------------------
+
 <details>
 <summary>
  Why we will be use ts 
@@ -41,7 +41,7 @@ English: TypeScript helps catch errors early, improves code quality, and enhance
 বাংলা: TypeScript সহযোগিতা করে ত্রুটি সমূহকে প্রাথমিকভাবে ধরা পরে, কোডের গুণমান উন্নত করে, এবং ডেভেলপারের কর্মক্ষমতা বাড়ায়।
 
 </details> 
---------------------
+
 <details>
 <summary>
 What is benefit of typescript 
@@ -61,7 +61,7 @@ TS Own types
 - interface. void. array. Enum. union. inersaction
 
 </details> 
---------------------
+
 <details>
 <summary>
 how to install ts 
@@ -90,7 +90,7 @@ tsc --version
 
 
 </details> 
---------------------
+
 <details>
 <summary>
 Run Ts code
@@ -116,7 +116,7 @@ node example.js
 
 
 </details> 
---------------------
+
 <details>
 <summary>
 Config ts file
@@ -155,8 +155,7 @@ Config ts file
 
 
 </details> 
--------------
-----------------
+
 
 
 <details>
@@ -216,7 +215,7 @@ let ageName: [number, string] = [22, "rakib"];
 </details> 
 
 
---------------------
+
 <details>
 <summary>
 What is Object in ts
@@ -254,7 +253,7 @@ const user: {
 
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is Function in ts
@@ -300,7 +299,7 @@ Bangla:
 
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is Spread, Rest Operator and Destructuring,
@@ -384,7 +383,7 @@ const [, , besfreind, ...rest] = myFriends;
 
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is Type alias
@@ -436,7 +435,7 @@ Type alias is a feature in TypeScript that allows you to create a new name for a
 
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is Ternary, Optional Chaining & Nullish Coalescing Operator
@@ -459,7 +458,7 @@ What is Ternary, Optional Chaining & Nullish Coalescing Operator
    - Bangla: নালিশ কো-অ্যালিসিং অপারেটর `??` ব্যবহার করা হয় যখন একটি ভ্যারিয়েবল null অথবা undefined হলে একটি ডিফল্ট মান সরবরাহ করতে। যদি বাম অপারেন্ড null বা undefined হয়, তবে এটি ডান অপারেন্ড ফেরত দেয়, অন্যথায় এটি বাম অপারেন্ড ফেরত দেয়।
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is
@@ -470,7 +469,7 @@ What is
 
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is
@@ -481,7 +480,7 @@ What is
 
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is
@@ -492,7 +491,7 @@ What is
 
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is
@@ -503,7 +502,7 @@ What is
 
 </details> 
 
---------------------
+
 <details>
 <summary>
 What is
