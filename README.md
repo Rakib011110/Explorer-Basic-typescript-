@@ -458,7 +458,378 @@ What is Ternary, Optional Chaining & Nullish Coalescing Operator
    - Bangla: নালিশ কো-অ্যালিসিং অপারেটর `??` ব্যবহার করা হয় যখন একটি ভ্যারিয়েবল null অথবা undefined হলে একটি ডিফল্ট মান সরবরাহ করতে। যদি বাম অপারেন্ড null বা undefined হয়, তবে এটি ডান অপারেন্ড ফেরত দেয়, অন্যথায় এটি বাম অপারেন্ড ফেরত দেয়।
 </details> 
 
+-----------------------------------
+<details>
+<summary>
+What is Type Assertion/Type Narrowing (টাইপ অ্যাসারশন/টাইপ ন্যারোয়িং)
 
+
+</summary>
+<br >
+Type Assertion/Type Narrowing (টাইপ অ্যাসারশন/টাইপ ন্যারোয়িং):
+English: Type assertion or type narrowing allows you to tell TypeScript that you know more about the type of a value than it does.
+Bangla: টাইপ অ্যাসারশন বা টাইপ ন্যারোয়িং আপনাকে বলে দেয় যে আপনি ভ্যালুর টাইপের সম্পর্কে টাইপস্ক্রিপ্ট থেকে অনেক কিছু জানেন।
+
+```js 
+{
+  let anything: any;
+
+  anything = "next level web development";
+
+  //   anything = 222222;
+
+  //   (anything as number).toFixed;
+
+  const kgTogm = (value: string | number): string | number | undefined => {
+    if (typeof value === "string") {
+      const convertValue = parseFloat(value) * 1000;
+      return convertValue;
+    }
+    if (typeof value === "number") {
+      return value * 1000;
+    }
+  };
+
+  const result1 = kgTogm(1000) as number;
+  const result2 = kgTogm("1000") as string;
+  type CustomError = {
+    message: string;
+  };
+  try {
+  } catch (erro) {
+    console.log((erro as CustomError).message);
+  }
+}
+
+```
+</details> 
+
+
+<details>
+<summary>
+What is Interface, Type Vs Interface (ইন্টারফেস, টাইপ বনাম ইন্টারফেস):
+
+</summary>
+<br >
+English: Interfaces and types are similar in TypeScript but have some differences. Interfaces are more commonly used for defining shapes of objects, while types can represent many things including objects, unions, intersections, and more.
+Bangla: ইন্টারফেস এবং টাইপগুলি টাইপস্ক্রিপ্টে প্রায়ই একই কাজ করে কিন্তু কিছু পার্থক্য রয়েছে। ইন্টারফেস প্রধানত অবজেক্টের আকার সংজ্ঞায়িত করার জন্য ব্যবহৃত হয়, যখন টাইপগুলি অবজেক্ট, ইউনিয়ন, ইন্টারসেকশন এবং আরও অনেক কিছু প্রতিনিধিত্ব করতে পারে।
+
+```js
+
+  type User1 = {
+    name: string;
+    age: number;
+  };
+  interface User2 {
+    name: string;
+    age: number;
+  }
+  type UserWithRole1 = User1 & { role: string };
+
+  interface UserWithRole2 extends User2 {
+    role: string;
+  }
+  const user1: UserWithRole2 = {
+    name: "Rakib",
+    age: 10,
+    role: "Manager",
+  };
+
+  //  js --> object, array --> object function --> object
+
+  type Roll1 = number[];
+
+  interface Roll2 {
+    [index: number]: number;
+  }
+
+  const rollnumber: Roll2 = [12, 12, 12];
+
+  // interface in function
+
+  type Add1 = (num1: number, num2: number) => number;
+
+  interface Add2 {
+    (num1: number, num2: number): number;
+  }
+  const add: Add2 = (num1, num2) => num1 + num2; 
+```
+
+
+</details> 
+
+
+<details>
+<summary>
+
+Introduction To Generics
+
+</summary>
+<br >
+ Introduction To Generics (জেনেরিক্সের পরিচিতি):
+English: Generics in TypeScript allow you to create reusable components that can work with a variety of data types while maintaining type safety.
+Bangla: জেনেরিক্স টাইপস্ক্রিপ্টে পুনরাবৃত্তিমূলক কোড তৈরি করার সুযোগ দেয় এবং টাইপ সেফটি বজায় রাখার মধ্যে ভিন্ন ধরণের ডেটা টাইপ সহজেই কাজ করাতে পারে।
+
+```js
+{
+  
+  type GenericsArray<T> = Array<T>;
+
+  //   const rollnumber: number[] = [12, 323, 23, 23];
+  const rollnumber: GenericsArray<number> = [12, 323, 23, 23];
+
+  //   const mentors: string[] = ["mr x", "mr y"];
+  const mentors: GenericsArray<string> = ["mr x", "mr y"];
+  //   const boolArrat: boolean[] = [true, false, true];
+  const boolArrat: GenericsArray<boolean> = [true, false, true];
+
+  const user: GenericsArray<{ name: string; age: number }> = [
+    {
+      name: "aa",
+      age: 323,
+    },
+    {
+      name: "aa",
+      age: 323,
+    },
+  ];
+  //  Generic Tuple
+  type GenericTuple<X, Y> = [X, Y];
+
+  const manush: GenericTuple<string, string> = ["mr x", "mr y"];
+  const userId: GenericTuple<number, { name: string; email: string }> = [
+    12,
+    { name: "rakib", email: "rakib@gmail.com" },
+  ];
+}
+
+```
+</details> 
+
+
+<details>
+<summary>
+Generics With Interfaces (ইন্টারফেস সহ জেনেরিক্স):
+</summary>
+<br >
+
+English: You can use generics with interfaces to create flexible and reusable components that work with different types of data.
+Bangla: আপনি ইন্টারফেসের সাথে জেনেরিক্স ব্যবহার করতে পারেন যাতে বিভিন্ন ধরণের ডেটার সাথে কাজ করতে সহজ এবং পুনরাবৃত্তিমূলক কোড তৈরি করা যায়।
+
+
+```js
+
+  interface Developer<T, X = null> {
+    name: string;
+    computer: {
+      brand: string;
+      model: string;
+      releaseYear: number;
+    };
+    watch: T;
+    bike?: X;
+  }
+
+  type Watch = { brand: string; model: string };
+  const poorDeveloper: Developer<Watch> = {
+    name: "rakib",
+    computer: {
+      brand: "Intel",
+      model: "x-867",
+      releaseYear: 2023,
+    },
+    watch: {
+      brand: "xiomi",
+      model: "mi-5",
+    },
+  };
+
+  interface AplleWatch {
+    brand: string;
+    model: string;
+    heartTrack: boolean;
+    sleepTrack: boolean;
+  }
+
+  interface YamhaBike {
+    model: string;
+    engine: string;
+  }
+  const ReachDeveloper: Developer<AplleWatch, YamhaBike> = {
+    name: "rakib",
+    computer: {
+      brand: "HP",
+      model: "x-25SUR",
+      releaseYear: 2023,
+    },
+    watch: {
+      brand: "apple",
+      model: "apple-5",
+      heartTrack: true,
+      sleepTrack: true,
+    },
+    bike: {
+      model: "Yamha",
+      engine: "100cc",
+    },
+  };
+
+```
+
+</details> 
+
+
+<details>
+<summary>
+Function With Generics (জেনেরিক্স সহ ফাংশন):
+
+
+</summary>
+<br >
+
+
+English: Functions can also use generics to work with different types of data in a flexible and type-safe manner.
+Bangla: ফাংশনগুলিও বিভিন্ন ধরণের ডেটা সহজেই এবং টাইপ সেফটি বজায় রাখার জন্য জেনেরিক্স ব্যবহার করতে পারে।
+
+```js
+{
+  const creatArray = (param: string): string[] => {
+    return [param];
+  };
+  const creatArrayWithGenerics = <T>(param: T): T[] => {
+    return [param];
+  };
+
+  const result1 = creatArray("bangladesh");
+  creatArrayWithGenerics;
+  const resGenArr = creatArrayWithGenerics<string>("Bangladesh");
+
+  type User = { id: number; name: string };
+  const resGenObj = creatArrayWithGenerics<User>({
+    id: 1212,
+    name: "Mr pashan",
+  });
+  //   ------
+  const creatArrayWithTuple = <T, Q>(param1: T, param2: Q): [T, Q] => {
+    return [param1, param2];
+  };
+
+  const result10 = creatArrayWithTuple<string, number>("bangladesh", 1221);
+  creatArrayWithGenerics;
+  const resGenArr1 = creatArrayWithTuple<string, { name: string }>(
+    "Bangladesh",
+    { name: "asia" }
+  );
+
+  const addCourseToStudent = <T>(student: T) => {
+    const course = "next level web";
+    return {
+      ...student,
+      course,
+    };
+  };
+  const student1 = addCourseToStudent({
+    name: "mr x",
+    email: "mr x@gmail.com",
+  });
+  const student2 = addCourseToStudent({
+    name: "mr y",
+    email: "mr y@gmail.com",
+  });
+}
+
+```
+</details> 
+
+<details>
+<summary>
+What is
+
+
+</summary>
+<br >
+Constraints In TypeScript (টাইপস্ক্রিপ্টে নিবন্ধন):
+English: Constraints in TypeScript allow you to limit the types that can be used with generics, ensuring that only certain types are accepted.
+Bangla: টাইপস্ক্রিপ্টে Constraints দ্বারা আপনি জেনেরিক্স সঙ্গে ব্যবহৃত হতে পারে টাইপগুলির সীমা নির্ধারণ করতে পারেন, যেন কেবল নির্দিষ্ট ধরণের টাইপগুলি গ্রহণ করা হয়।
+
+```js
+{
+  const addCourseToStudent = <
+    T extends { id: number; name: string; email: string; devtype: string }
+  >(
+    student: T
+  ) => {
+    const course = "next level web";
+    return {
+      ...student,
+      course,
+    };
+  };
+  const student1 = addCourseToStudent<{
+    id: number;
+    name: string;
+    email: string;
+    devtype: string;
+  }>({
+    id: 32323,
+    name: "mr x",
+    email: "mr x@gmail.com",
+    devtype: "Next level dev",
+  });
+  const student2 = addCourseToStudent({
+    id: 323,
+    name: "mr y",
+    email: "mr y@gmail.com",
+    devtype: "next level",
+  });
+}
+
+```
+
+</details> 
+<details>
+<summary> constraint using of key
+
+
+</summary>
+<br >
+
+
+In simple terms, a constraint using a key in TypeScript means that you're applying a rule or condition to data using a specific identifier, or "key," to ensure data integrity.
+
+এটা মানে হলো আপনি ডেটা সংরক্ষণের সময় নির্দিষ্ট ইউনিক আইডি বা কী ব্যবহার করে নিশ্চিত করছেন যে ডেটা সঠিকভাবে সংরক্ষিত হচ্ছে এবং কোনও ক্ষেত্রে ডেটা ভুলে যাচ্ছে না। 
+
+```js 
+
+{
+  type Vehicle = {
+    bike: string;
+    car: string;
+    ship: string;
+  };
+  type Owner = "bike" | "car" | "ship"; // manualy
+
+  type Owner2 = keyof Vehicle;
+
+  const getPropertyValue = <X, Y extends keyof X>(obj: X, key: Y) => {
+    return obj[key];
+  };
+
+  const user = {
+    name: "mr rakib",
+    age: 20,
+    addres: "pabna",
+  };
+  const car = {
+    model: "toyota 100",
+    year: 2000,
+  };
+
+  const result = getPropertyValue(car, "model");
+}
+```
+
+</details> 
 <details>
 <summary>
 What is
@@ -468,41 +839,6 @@ What is
 <br >
 
 </details> 
-
-
-<details>
-<summary>
-What is
-
-
-</summary>
-<br >
-
-</details> 
-
-
-<details>
-<summary>
-What is
-
-
-</summary>
-<br >
-
-</details> 
-
-
-<details>
-<summary>
-What is
-
-
-</summary>
-<br >
-
-</details> 
-
-
 <details>
 <summary>
 What is
