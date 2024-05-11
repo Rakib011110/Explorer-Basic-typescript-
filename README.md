@@ -830,21 +830,3 @@ In simple terms, a constraint using a key in TypeScript means that you're applyi
 ```
 
 </details> 
-<details>
-<summary>
-What is
-
-
-</summary>
-<br >
-
-</details> 
-<details>
-<summary>
-What is
-
-
-</summary>
-<br >
-
-</details> 
